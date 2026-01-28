@@ -1,0 +1,122 @@
+{
+  "name": "Portfolio Contact Form",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "portfolio-contact",
+        "options": {
+          "responseMode": "onReceived",
+          "responseData": "allEntries"
+        }
+      },
+      "id": "webhook-node",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "portfolio-contact"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Дата": "={{ $now.format('dd.MM.yyyy HH:mm') }}",
+            "Имя": "={{ $json.body.name }}",
+            "Email": "={{ $json.body.email }}",
+            "Телефон": "={{ $json.body.phone || '—' }}",
+            "Тип проекта": "={{ $json.body.projectType }}",
+            "Сообщение": "={{ $json.body.message }}",
+            "Источник": "={{ $json.body.source || 'portfolio_website' }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            { "id": "Дата", "displayName": "Дата", "required": false, "defaultMatch": false, "canBeUsedToMatch": true, "display": true, "type": "string" },
+            { "id": "Имя", "displayName": "Имя", "required": false, "defaultMatch": false, "canBeUsedToMatch": true, "display": true, "type": "string" },
+            { "id": "Email", "displayName": "Email", "required": false, "defaultMatch": false, "canBeUsedToMatch": true, "display": true, "type": "string" },
+            { "id": "Телефон", "displayName": "Телефон", "required": false, "defaultMatch": false, "canBeUsedToMatch": true, "display": true, "type": "string" },
+            { "id": "Тип проекта", "displayName": "Тип проекта", "required": false, "defaultMatch": false, "canBeUsedToMatch": true, "display": true, "type": "string" },
+            { "id": "Сообщение", "displayName": "Сообщение", "required": false, "defaultMatch": false, "canBeUsedToMatch": true, "display": true, "type": "string" },
+            { "id": "Источник", "displayName": "Источник", "required": false, "defaultMatch": false, "canBeUsedToMatch": true, "display": true, "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "google-sheets-node",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [500, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": ""
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chat_id": "",
+        "message": "✅ <b>Новая заявка с портфолио!</b>\n━━━━━━━━━━━━━━━━━━━━\n\n👤 <b>Имя:</b> {{ $('Webhook').item.json.body.name }}\n\n📧 <b>Email:</b> <code>{{ $('Webhook').item.json.body.email }}</code>\n\n📞 <b>Телефон:</b> {{ $('Webhook').item.json.body.phone || '—' }}\n\n📋 <b>Тип проекта:</b> {{ $('Webhook').item.json.body.projectType }}\n\n💬 <b>Сообщение:</b>\n{{ $('Webhook').item.json.body.message }}\n\n━━━━━━━━━━━━━━━━━━━━\n🕐 <i>{{ $now.format('dd.MM.yyyy в HH:mm') }}</i>",
+        "parse_mode": "HTML",
+        "additionalFields": {
+          "disable_web_page_preview": true
+        }
+      },
+      "id": "telegram-node",
+      "name": "Telegram",
+      "type": "n8n-nodes-telegram-advanced.telegramAdvanced",
+      "typeVersion": 1,
+      "position": [750, 300],
+      "credentials": {
+        "telegramAdvancedApi": {
+          "id": "",
+          "name": ""
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1
+}
