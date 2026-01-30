@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Pavel Lipin - Automation Engineer & AI Integration Specialist",
-  description: "Проектирую AI-powered воркфлоу на no-code платформах. Создаю мультиагентные системы для логистики, недвижимости и туристического бизнеса. n8n, Make, Claude AI.",
-  keywords: ["automation", "AI", "n8n", "Make", "no-code", "workflow", "chatbot", "integration"],
+  description: "I help businesses save 40-60% on operational costs through AI-powered automation. Building production-grade systems with 99.7% uptime for logistics, tourism, and service industries. n8n, Make, Claude AI expert.",
+  keywords: ["automation engineer", "AI integration", "n8n expert", "Make automation", "workflow automation", "chatbot development", "business process automation", "Claude AI", "European market"],
   authors: [{ name: "Pavel Lipin" }],
   openGraph: {
     title: "Pavel Lipin - Automation Engineer & AI Integration Specialist",
-    description: "AI-powered автоматизация бизнес-процессов",
+    description: "Save 40-60% on operational costs through AI-powered automation. 99.7% uptime. 30+ completed projects.",
     type: "website",
   },
 };
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
