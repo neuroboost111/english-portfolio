@@ -474,7 +474,7 @@ export default function Home() {
 
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="https://linkedin.com/in/YOUR_LINKEDIN"
+                    href="https://www.linkedin.com/in/pavellipin"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 border border-blue-500/30 rounded-xl hover:border-blue-400 hover:bg-blue-500/30 transition-all group"
@@ -485,7 +485,7 @@ export default function Home() {
                     <span className="text-white font-semibold group-hover:text-blue-300 transition-colors">LinkedIn</span>
                   </a>
                   <a
-                    href="https://github.com/YOUR_GITHUB"
+                    href="https://github.com/neuroboost111"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-slate-700/50 to-slate-600/50 border border-slate-500/30 rounded-xl hover:border-slate-400 hover:bg-slate-600/50 transition-all group"
@@ -557,7 +557,7 @@ export default function Home() {
             <p className="text-gray-500">© 2026 Pavel Lipin. All rights reserved.</p>
             <div className="flex gap-6">
               <a
-                href="https://linkedin.com/in/YOUR_LINKEDIN"
+                href="https://www.linkedin.com/in/pavellipin"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-blue-400 transition-colors"
@@ -565,7 +565,7 @@ export default function Home() {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/YOUR_GITHUB"
+                href="https://github.com/neuroboost111"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors"
