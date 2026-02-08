@@ -149,7 +149,7 @@ export default function Home() {
                 Automation Engineer & AI Integration Specialist
               </p>
               <p className="text-lg md:text-xl mb-8 text-gray-400 max-w-3xl leading-relaxed animate-fade-in-up animation-delay-400">
-                I design and build automation and AI systems that eliminate manual work and improve reliability for small and mid-size businesses. 3+ years building production systems with <span className="text-blue-400 font-semibold">n8n, modern web stacks and LLMs</span> — for logistics, tourism and online services.
+                I design and build automation and AI systems that eliminate manual work and improve reliability for small and mid-size businesses. 3+ years building production systems with <span className="text-blue-400 font-semibold">n8n, modern web stacks and LLMs</span> — for logistics, tourism, real estate and online services.
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-600">
                 <a
