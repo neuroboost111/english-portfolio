@@ -15,13 +15,13 @@ export default function Home() {
     {
       title: "LesFlow",
       subtitle: "Full-Stack Logistics Platform",
-      problem: "Forestry companies struggled to find available trucks for timber transport. Manual coordination led to 30% vehicle downtime and delayed deliveries.",
-      solution: "Built 'Uber for logging trucks' — a mobile aggregator connecting truck owners with logging companies. Implemented real-time GPS tracking, automated dispatching, and AI-powered route optimization.",
+      problem: "Forestry companies struggled to find available trucks for timber transport. Manual coordination caused significant vehicle downtime and delayed deliveries.",
+      solution: "Built end-to-end MVP: system architecture, backend, web app and mobile app. Matching engine, dispatching logic, operational dashboards. Integrations with Supabase, automation tools and real-time tracking.",
       results: [
-        "35% reduction in vehicle downtime",
-        "25% faster delivery times",
-        "$45K+ annual operational savings",
-        "Scaled to 50+ active trucks in first 3 months"
+        "30–40% reduction in vehicle idle time (founder-reported)",
+        "50+ active trucks onboarded in first months after launch",
+        "Platform now being prepared for next funding round",
+        "Planned expansion to Asia, Europe and North America"
       ],
       tags: ["Next.js", "React Native", "Supabase", "AI"],
       icon: "🚛"
@@ -29,13 +29,13 @@ export default function Home() {
     {
       title: "Astra Marine",
       subtitle: "AI Competitive Intelligence System",
-      problem: "Marine tourism company spent 15+ hours weekly manually tracking 8 competitors' pricing, promotions, and market moves.",
-      solution: "Developed automated competitive intelligence system using Perplexity AI and Tavily for data collection, with weekly PDF reports delivered via email. Integrated market analysis for strategic decision-making.",
+      problem: "Marine tourism company spending 10–15 hours/week on manual competitor monitoring. Needed automated tracking without sacrificing data quality.",
+      solution: "n8n pipeline using Perplexity AI and Tavily to collect and structure competitor data. Automated weekly PDF reports via Google Docs API and email delivery.",
       results: [
-        "35% increase in booking conversion rate",
-        "$60K+ additional annual revenue",
-        "15 hours/week saved (~$30K/year in labor)",
-        "Real-time competitor price tracking"
+        "Monitoring reduced from 10–15 hrs/week to under 1 hour (client-reported)",
+        "Improved pricing accuracy and higher booking conversion",
+        "Team freed for higher-value tasks",
+        "Detailed metrics available on request (NDA project)"
       ],
       tags: ["n8n", "Perplexity AI", "Google Docs API", "Automation"],
       icon: "⛵"
@@ -43,13 +43,13 @@ export default function Home() {
     {
       title: "Error Handler & Self-Healer",
       subtitle: "Production-Grade Monitoring System",
-      problem: "n8n workflows failed silently, causing data loss and requiring manual debugging. Average resolution time: 4+ hours.",
-      solution: "Built centralized error handling with Knowledge Base logging, automatic solution search via RAG, and instant Telegram alerts with context-rich error reports.",
+      problem: "Business-critical n8n workflows failing silently across several clients, causing data loss and hours of manual debugging per incident.",
+      solution: "Centralized error logging with Knowledge Base and RAG-based fix suggestions. Detailed Telegram alerts with context. Self-healing logic: automatic retries, fallbacks and routing for common failure patterns.",
       results: [
-        "99.7% system uptime achieved",
-        "80% of errors auto-resolved",
-        "MTTR reduced from 4 hours to 15 minutes",
-        "$40K+ saved in developer time annually"
+        "Uptime improved from ~95% to 99.7% across monitored workflows",
+        "80%+ of routine incidents resolved automatically",
+        "Mean time to recovery: from hours to minutes",
+        "Evolved into open-source component and part of broader platform"
       ],
       tags: ["n8n", "Qdrant", "RAG", "DevOps"],
       icon: "🛡️"
@@ -63,7 +63,7 @@ export default function Home() {
       skills: [
         { name: "n8n", level: 95 },
         { name: "Make (Integromat)", level: 85 },
-        { name: "Zapier", level: 75 }
+        { name: "Custom workflow tooling", level: 80 }
       ]
     },
     {
@@ -98,21 +98,21 @@ export default function Home() {
   // Testimonials
   const testimonials = [
     {
-      text: "Reduced our manual work by 70% in 2 months",
-      author: "Logistics Company CEO",
-      role: "",
+      text: "Pavel built the entire MVP for our logistics platform from scratch — backend, mobile app and deployment. He delivered a working product that we are now preparing to scale.",
+      author: "Alexey K.",
+      role: "Founder, Logistics Startup (LesFlow)",
       placeholder: false
     },
     {
-      text: "Best ROI we've seen from any automation project",
-      author: "Tourism Business Owner",
-      role: "",
+      text: "Pavel automated our competitor monitoring. The solution cut our manual work from 10+ hours a week to almost nothing, and improved the quality of our pricing decisions.",
+      author: "Dmitry S.",
+      role: "CEO, Marine Tourism Company (under NDA)",
       placeholder: false
     },
     {
-      text: "The error handling system alone saved us countless hours of debugging",
-      author: "Tech Startup CTO",
-      role: "",
+      text: "Pavel built a custom error handling and monitoring layer for our n8n workflows. It's been running reliably in production and cut our incident response time significantly.",
+      author: "Nikita P.",
+      role: "Technical Lead, Tech Startup",
       placeholder: false
     }
   ];
@@ -149,7 +149,7 @@ export default function Home() {
                 Automation Engineer & AI Integration Specialist
               </p>
               <p className="text-lg md:text-xl mb-8 text-gray-400 max-w-3xl leading-relaxed animate-fade-in-up animation-delay-400">
-                I help international businesses save <span className="text-green-400 font-semibold">40-60% on operational costs</span> through AI-powered automation. Building production-grade systems with <span className="text-blue-400 font-semibold">99.7% uptime</span> for logistics, tourism, and service industries.
+                I design and build automation and AI systems that eliminate manual work and improve reliability for small and mid-size businesses. 3+ years building production systems with <span className="text-blue-400 font-semibold">n8n, modern web stacks and LLMs</span> — for logistics, tourism and online services.
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-600">
                 <a
@@ -379,7 +379,7 @@ export default function Home() {
           <div className="mt-12 pt-8 border-t border-slate-700">
             <h3 className="text-xl font-semibold text-gray-300 mb-6 text-center">Also Working With</h3>
             <div className="flex flex-wrap justify-center gap-3">
-              {["Google APIs", "Telegram API", "Airtable", "Google Sheets", "Gemini", "DeepSeek", "Llama", "Pinecone", "Docker", "Bash", "Git"].map((tech, index) => (
+              {["Google APIs", "Telegram API", "Gemini", "DeepSeek", "Llama", "Docker", "Bash", "Git"].map((tech, index) => (
                 <div
                   key={index}
                   className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-gray-400 text-sm hover:border-purple-500/50 hover:text-white transition-all duration-300"
@@ -536,13 +536,16 @@ export default function Home() {
               <div className="p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl border border-purple-500/20">
                 <h4 className="text-lg font-semibold text-white mb-3">Availability</h4>
                 <p className="text-gray-400 mb-2">
-                  🌍 Remote (EU timezones available)
+                  🌍 Open to remote and relocation worldwide
                 </p>
                 <p className="text-gray-400 mb-2">
-                  📧 Email/LinkedIn: within 1 hour
+                  🕐 Notice period: Flexible (currently freelance)
+                </p>
+                <p className="text-gray-400 mb-2">
+                  📋 Open to work permit sponsorship
                 </p>
                 <p className="text-gray-400">
-                  📱 Telegram: available for urgent matters
+                  🚀 Start date: 2–4 weeks from offer
                 </p>
               </div>
             </div>
